@@ -12,12 +12,14 @@ VFW Project 1
 		<meta name="robots" content="index, follow" />
 		<!-- Only concerned about iOS for now. -->
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<title>Add a Release</title>
 	</head>
 	<body>
 		<header>
-			<h1>Audiophone</h1>
+			Audiophone
 		</header>
+		<section>
 		<form action="" method="post">
 			<fieldset>
 				<legend>Add a Release</legend>
@@ -45,8 +47,8 @@ VFW Project 1
 					</li>
 					<li>Release Artists:
 						<ul>
-							<li><input type="radio" checked value="Single Artist" id="singleArtist" name="releaseArtists" /><label for="singleArtist">Single Artist</label></li>
-							<li><input type="radio" value="Various Artist" id="variousArtists" name="releaseArtists" /><label for="variousArtists">Various Artists</label></li>
+							<li id="releaseArtist"><input type="radio" checked value="Single Artist" id="singleArtist" name="releaseArtists" /><label for="singleArtist">Single Artist</label></li>
+							<li id="releaseArtist"><input type="radio" value="Various Artist" id="variousArtists" name="releaseArtists" /><label for="variousArtists">Various Artists</label></li>
 						</ul>
 					</li>
 					<li><label for="songCount">Number of songs:</label><input type="range" id="songCount" /></li>
@@ -60,5 +62,6 @@ VFW Project 1
 				<a href="#">Display data</a>
 			</nav>
 		</form>
+		</section>
 	</body>
 </html>

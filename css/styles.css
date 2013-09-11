@@ -5,6 +5,7 @@ VFW Project 2
 2013-09-11
 */
 
+/* This is meant to be view *ONLY* on a mobile device. */
 html {
     background-color: #DEDEDE;
 }
@@ -41,17 +42,54 @@ header {
 }
 
 section {
-	padding: .5em;
+	padding: 0 .5em .5em .5em;
 }
 
 /* Modified link styling based on my personal blog. */
-a {
+#indexLink {
 	display:block;
 	margin-top: 10px;
+}
+
+a {
 	color: #666;
 	text-decoration: underline;
 }
 
 a:visited {
 	color: #DD0000;
+}
+
+/* Add Item formatting */
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+legend {
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+ul, li {
+	padding: 0 0 0 10px;
+	list-style-type: none;
+}
+
+#releaseArtist {
+	padding: 0 0 0 20px;
+}
+
+#songCount {
+	display: block;
+	width: 80%;
+	margin: 5px auto;
+}
+
+#opinion {
+	margin-left: 5px;
+	height: 50px;
+	width: 70%;
+	vertical-align: middle;
 }
