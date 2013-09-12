@@ -12,6 +12,48 @@ window.addEventListener("DOMContentLoaded", function(){
 		return element;
 	}
 	
+	function createReleaseSelector() {
+		var label = document.createElement('label');
+		label.setAttribute("for", "releaseType");
+		label.innerHTML = "Release Type:";
+		el('releaseArtistLi').appendChild(label);
+		var select = document.createElement('select');
+		select.setAttribute("id", "releaseType");
+		var options = ["Album", "Soundtrack", "EP", "Compilation", "DJ Mix", "Single", "Live album", "Remix", "Bootleg", "Interview", "Mixtape", "Guest Appearance", "Composition"];
+		for (i = 0; i < options.length; i++) {
+			var option = document.createElement('option');
+			option.setAttribute("value", options[i]);
+			option.innerHTML = options[i];
+			select.appendChild(option);
+		}
+		el('releaseArtistLi').appendChild(select);
+	}
+	
+	function changeFormat() {
+		if (el('addEntry').style.display === "none") {
+			el('addEntry').style.display = "inline";
+			el('displayLink').style.display = "none";
+			document.forms[0].style.display = "none";
+		} else {
+			el('addEntry').style.display = "none";
+			el('displayLink').style.display = "inline";			
+			el('frame').removeChild(el('entities'));
+			document.forms[0].style.display = "block";
+		}
+	}
+	
+	function removeAllEntities() {
+		if (localStorage.length > 0) {
+			localStorage.clear();
+			alert('All stored data has been removed.');
+		} else {
+			alert('There are no entries to be removed.');
+		}
+		if (document.forms[0].style.display === "none") {
+			changeFormat();	
+		}
+	}
+	
 	function getReleaseArtistValue() {
 		var options = document.forms[0].releaseArtists;
 		for (var i = 0; i < options.length; i++) {
@@ -44,6 +86,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 
 	function retrieveEntities() {
+		changeFormat();
 		var listingDiv = document.createElement('div');
 		listingDiv.setAttribute("id", "entities");
 		var entityList = document.createElement('ul');
@@ -68,12 +111,13 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	// Add dropdown menu
+	createReleaseSelector();
+	
 	// Click events
-	var displayLink = el('displayLink');
-	displayLink.addEventListener("click", retrieveEntities);
-	var clearLink = el('clearData');
-/* 	clearLink.addEventListener("Click", clearLocalData); */
-	var saveLink = el('submit');
-	saveLink.addEventListener("click", addEntity);
+	el('displayLink').addEventListener("click", retrieveEntities);
+	el('clearData').addEventListener("click", removeAllEntities);
+	el('submit').addEventListener("click", addEntity);
+	el('addEntry').addEventListener("click", changeFormat);
 	
 });

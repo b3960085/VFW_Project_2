@@ -29,23 +29,7 @@ VFW Project 2
 					<li class="sectionList"><label for="artistName">Album Artist:</label><input type="text" id="artistName" /></li>
 					<li class="sectionList"><label for="albumName">Album Name:</label><input type="text" id="albumName" /></li>
 					<li class="sectionList"><label for="releaseDate">Release Date:</label><input type="date" id="releaseDate" /></li>
-					<li class="sectionList">
-						<label for="releaseType">Release Type:</label>
-						<select id="releaseType">
-							<option value="Album">Album</option>
-							<option value="Soundtrack">Soundtrack</option>
-							<option value="EP">EP</option>
-							<option value="Compilation">Compilation</option>
-							<option value="DJ Mix">DJ Mix</option>
-							<option value="Single">Single</option>
-							<option value="Live album">Live album</option>
-							<option value="Remix">Remix</option>
-							<option value="Bootleg">Bootleg</option>
-							<option value="Interview">Interview</option>
-							<option value="Mixtape">Mixtape</option>
-							<option value="Guest Appearance">Guest Appearance</option>
-							<option value="Composition">Composition</option>
-						</select>							
+					<li class="sectionList" id="releaseArtistLi">
 					</li>
 					<li class="sectionList">Release Artists:
 						<ul>
@@ -60,11 +44,12 @@ VFW Project 2
 				<input type="hidden" value="true" />
 			</fieldset>
 			<input type="button" value="Add Release to Collection" id="submit" />
-			<nav>
-				<a href="#" id="clearData">Clear stored data</a>
-				<a href="#" id="displayLink">Display data</a>
-			</nav>
 		</form>
+		<nav>
+			<a href="#" id="clearData">Clear stored data</a>
+			<a href="#" id="displayLink">Display data</a>
+			<a href="#" id="addEntry" style="display: none;">Add Release</a>
+		</nav>
 		</section>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
