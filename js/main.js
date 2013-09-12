@@ -1,7 +1,9 @@
-// Jesse Read
-// 1309 - VFW
-// VFW Project 2
-// 2013-09-11
+/*
+Jesse Read
+1309 - VFW
+VFW Project 2
+2013-09-11
+*/
 
 /* Wait until the DOM is ready */
 window.addEventListener("DOMContentLoaded", function(){
