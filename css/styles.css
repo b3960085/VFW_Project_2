@@ -72,9 +72,20 @@ legend {
 	margin-bottom: 10px;
 }
 
-ul, li {
+.sectionList {
 	padding: 0 0 0 10px;
+}
+
+ul, li {
 	list-style-type: none;
+}
+
+.entityList {
+	padding: 0;
+}
+
+#listEntry {
+	margin-bottom: 10px;
 }
 
 #releaseArtist {
